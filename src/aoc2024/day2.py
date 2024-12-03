@@ -1,6 +1,4 @@
-import sys
-
-import numpy as np
+from aoc2024.utils import np, sys, timeit
 
 
 def parse_input(inp: str) -> list[list[int]]:
@@ -23,16 +21,29 @@ def split_report(report: list[int]) -> list[list[int]]:
     )
 
 
-def main2():
+@timeit
+def part1(reports: list[list[int]]):
+    print("part 1: ", sum(is_report_valid(report) for report in reports))
+
+
+@timeit
+def part2(reports: list[list[int]]):
+    print(
+        "part 2: ",
+        sum(
+            is_report_valid(report)
+            or any(is_report_valid(split) for split in split_report(report))
+            for report in reports
+        ),
+    )
+
+
+def main():
     inp = sys.stdin.read()
     reports = parse_input(inp)
-    safe = sum(
-        is_report_valid(report)
-        or any(is_report_valid(split) for split in split_report(report))
-        for report in reports
-    )
-    print(safe)
+    part1(reports)
+    part2(reports)
 
 
 if __name__ == "__main__":
-    main2()
+    main()

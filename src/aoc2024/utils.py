@@ -5,6 +5,8 @@ import re
 import sys
 import time
 
+import numpy as np
+
 
 def timeit(f):
     @functools.wraps(f)

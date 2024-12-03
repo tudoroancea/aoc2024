@@ -1,4 +1,4 @@
-from utils import re, sys, timeit
+from aoc2024.utils import re, sys, timeit
 
 
 @timeit
