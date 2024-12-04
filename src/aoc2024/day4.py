@@ -30,19 +30,36 @@ def part1(chars: list[list[str]]):
 def part2(chars: list[list[str]]):
     nlines = len(chars)
     ncols = len(chars[0])
-    positions = [(i, j) for i in range(nlines) for j in range(ncols) if chars[i][j] == "A"]
-    found = 0
-    for i, j in positions:
-        if (1 <= i < nlines - 1 and 1 <= j < ncols - 1) and (
-            sum(
-                {chars[i + direction[0]][j + direction[1]], chars[i - direction[0]][j - direction[1]]} == {"M", "S"}
-                for direction in [(1, 1), (-1, 1)]
-            )
-            == 2
-        ):
-            found += 1
 
-    print(f"part 2: {found}")
+    # 'oneliner'
+    print(
+        "part 2: ",
+        sum(
+            (1 <= i < nlines - 1 and 1 <= j < ncols - 1)
+            and (
+                sum(
+                    {chars[i + direction[0]][j + direction[1]], chars[i - direction[0]][j - direction[1]]} == {"M", "S"}
+                    for direction in [(1, 1), (-1, 1)]
+                )
+                == 2
+            )
+            for i, j in [(i, j) for i in range(nlines) for j in range(ncols) if chars[i][j] == "A"]
+        ),
+    )
+
+    # more detailed version
+    # positions = [(i, j) for i in range(nlines) for j in range(ncols) if chars[i][j] == "A"]
+    # found = 0
+    # for i, j in positions:
+    #     if (1 <= i < nlines - 1 and 1 <= j < ncols - 1) and (
+    #         sum(
+    #             {chars[i + direction[0]][j + direction[1]], chars[i - direction[0]][j - direction[1]]} == {"M", "S"}
+    #             for direction in [(1, 1), (-1, 1)]
+    #         )
+    #         == 2
+    #     ):
+    #         found += 1
+    # print(f"part 2: {found}")
 
 
 def main():
