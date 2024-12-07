@@ -1,7 +1,6 @@
-from collections import deque
 from copy import deepcopy
 
-from aoc2024.utils import sys, timeit
+from aoc2024.utils import sys
 
 
 def print_grid(grid: list[list[str]]):
