@@ -6,6 +6,11 @@ import re
 import sys
 import time
 
+# some useful functions or classes that we import directly
+from collections import defaultdict
+from copy import copy, deepcopy
+from itertools import combinations, product
+
 import numpy as np
 
 
