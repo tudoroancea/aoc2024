@@ -44,3 +44,6 @@ typeCheckingMode = "off"
 
 [tool.ruff]
 line-length = 150
+
+[tool.ruff.lint]
+ignore = ["E741"]
