@@ -40,7 +40,7 @@ build-backend = "hatchling.build"
 [tool.pyright]
 venvPath = "."
 venv = ".venv"
-typeCheckingMode = "off"
+typeCheckingMode = "standard"
 
 [tool.ruff]
 line-length = 150

@@ -9,9 +9,11 @@ import sys
 import time
 
 # some useful functions or classes that we import directly
-from collections import defaultdict
+from collections import defaultdict, deque
 from copy import copy, deepcopy
+from functools import cache, lru_cache, partial, wraps
 from itertools import combinations, product
+from dataclasses import dataclass
 
 import numpy as np
 

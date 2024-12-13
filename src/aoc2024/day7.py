@@ -46,7 +46,7 @@ def validate_equation(expected_result: int, first_operand: int, other_operands: 
 
 
 @timeit
-def part1(equations: list[tuple[int, list[int]]]) -> int:
+def part1(equations: list[tuple[int, list[int]]]):
     print(
         "part 1: ",
         sum(expected_result for expected_result, operands in equations if validate_equation(expected_result, operands[0], operands[1:], False)),
@@ -54,7 +54,7 @@ def part1(equations: list[tuple[int, list[int]]]) -> int:
 
 
 @timeit
-def part2(equations: list[tuple[int, list[int]]]) -> int:
+def part2(equations: list[tuple[int, list[int]]]):
     print(
         "part 2: ",
         sum(expected_result for expected_result, operands in equations if validate_equation(expected_result, operands[0], operands[1:], True)),
