@@ -4,7 +4,10 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = ["numpy>=2.1.3"]
+dependencies = [
+    "numpy>=2.1.3",
+    "scipy>=1.14.1",
+]
 
 [project.scripts]
 day1 = "aoc2024.day1:main"
