@@ -14,6 +14,7 @@ from copy import copy, deepcopy
 from functools import cache, lru_cache, partial, wraps
 from itertools import combinations, product
 from dataclasses import dataclass
+from typing import Optional, Callable
 
 import numpy as np
 
