@@ -15,8 +15,10 @@ from functools import cache, lru_cache, partial, wraps
 from itertools import combinations, product
 from dataclasses import dataclass
 from typing import Optional, Callable
+from heapq import heappush, heappop
 
 import numpy as np
+from icecream import ic
 
 
 def timeit(f):
@@ -29,3 +31,8 @@ def timeit(f):
         return result
 
     return inner_func
+
+
+def print_grid(grid: list[list[str]]):
+    for line in grid:
+        print("".join(line))
