@@ -11,14 +11,17 @@ import time
 # some useful functions or classes that we import directly
 from collections import defaultdict, deque
 from copy import copy, deepcopy
-from functools import cache, lru_cache, partial, wraps
-from itertools import combinations, product
 from dataclasses import dataclass
-from typing import Optional, Callable
-from heapq import heappush, heappop
+from functools import cache, lru_cache, partial, wraps
+from heapq import heappop, heappush
+from itertools import combinations, product
+from typing import Callable, Optional
 
+import icecream
 import numpy as np
 from icecream import ic
+
+icecream.install()
 
 
 def timeit(f):
