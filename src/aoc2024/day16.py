@@ -1,5 +1,4 @@
-from aoc2024.utils import defaultdict, deque, deepcopy, ic, print_grid, heappush, heappop
-from itertools import chain
+from aoc2024.utils import defaultdict, heappop, heappush
 
 type node = tuple[int, int, str]
 

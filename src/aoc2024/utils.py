@@ -41,3 +41,7 @@ def print_grid(grid: list[list[str]], transpose: bool = False):
         grid = list(map(list, zip(*grid)))
     for line in grid:
         print("".join(line))
+
+
+def parse_grid(lines: list[str]) -> list[list[str]]:
+    return list(map(list, map(lambda x: x.strip(), lines)))
