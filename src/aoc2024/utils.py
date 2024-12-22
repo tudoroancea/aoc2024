@@ -33,6 +33,8 @@ def timeit(f):
     return inner_func
 
 
-def print_grid(grid: list[list[str]]):
+def print_grid(grid: list[list[str]], transpose: bool = False):
+    if transpose:
+        grid = list(map(list, zip(*grid)))
     for line in grid:
         print("".join(line))
